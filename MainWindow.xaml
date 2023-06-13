@@ -7,6 +7,31 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFE8B1F1" Offset="0"/>
+                <GradientStop Color="#FFEFD1F4" Offset="0.649"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <MediaElement x:Name="MedShow" HorizontalAlignment="Left" Height="285" Margin="135,40,0,0" VerticalAlignment="Top" Width="520" MediaOpened="MedShow_MediaOpened"/>
+        <Button x:Name="btnPlay" Content="播放" HorizontalAlignment="Left" Height="30" Margin="135,358,0,0" VerticalAlignment="Top" Width="75" FontSize="18" Background="#FFCE93EB" Click="btnPlay_Click"/>
+        <Button x:Name="btnExit" Content="離開" HorizontalAlignment="Left" Height="30" Margin="425,358,0,0" VerticalAlignment="Top" Width="75" FontSize="18" Background="#FF5F9DF6" Click="btnExit_Click"/>
+        <Button x:Name="btnStop" Content="停止" HorizontalAlignment="Left" Height="30" Margin="330,358,0,0" VerticalAlignment="Top" Width="70" FontSize="18" RenderTransformOrigin="-0.261,0.667" Background="#FF87F0AA" Click="btnStop_Click"/>
+        <Button x:Name="btnPause" Content="暫停" HorizontalAlignment="Left" Height="30" Margin="230,358,0,0" VerticalAlignment="Top" Width="75" FontSize="18" RenderTransformOrigin="0.597,1.473" Background="#FFF3F430" Click="btnPause_Click"/>
+        <TextBox x:Name="txtFilePath" HorizontalAlignment="Left" Height="25" Margin="135,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="415" FontSize="18"/>
+        <Button x:Name="btnOpenFile" Content="開啟檔案" HorizontalAlignment="Left" Height="25" Margin="570,10,0,0" VerticalAlignment="Top" Width="85" FontSize="16" Click="btnOpenFile_Click" RenderTransformOrigin="0.593,0.008"/>
+        <Slider x:Name="sliVolume" HorizontalAlignment="Left" Height="30" Margin="535,358,0,0" VerticalAlignment="Top" Width="120" LargeChange="0.05" Maximum="1" Value="0.5" TickFrequency="0.01" ValueChanged="sliVolume_ValueChanged"/>
+        <Slider x:Name="sliProgress" HorizontalAlignment="Left" Margin="135,330,0,0" VerticalAlignment="Top" Height="30" Width="520" PreviewMouseLeftButtonUp="sliProgress_PreviewMouseLeftButtonUp_1" RenderTransformOrigin="0.5,0.5">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.005"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
+        <TextBox x:Name="tbxtime" HorizontalAlignment="Left" Height="25" Margin="670,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85"/>
     </Grid>
 </Window>
+    
